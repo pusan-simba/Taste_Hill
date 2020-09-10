@@ -24,9 +24,8 @@ body{
     /* background: #FFFFFF; */
     /* text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
 } */ 
-
+/* 회원가입css 필요없을듯? */
 .btn1{
-
     width:60%;
   
     float: left;
@@ -42,16 +41,12 @@ body{
     font-weight: bold;
     text-decoration: none;
 }
+/* */
 
 .btn2{
     width:15%;
-
-    /* float: right; */
     font-size:15pt;
     color: rgba(117, 74, 10, 0.747);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     /* border-radius: 20px; */
     /* background-color: rgb(236, 222, 252); */
     /* width: 140px;
@@ -59,9 +54,31 @@ body{
     font-weight: bold;
     text-decoration: none;
 }
-
-.btn3{
+/* alert 버튼용 */
+/* .btn3{
     background-color: rgb(248, 207, 94);
     width: 140px;
     height: 45px;
+} */
+
+.btn3{
+    background-color: rgb(248, 207, 94);
+    background-size: 200%;
+
+    /* width: 200px;
+    height: 100px; */
+    text-decoration: none;
+    font-size: 13;
+    color: rgb(15, 14, 12);
+}
+
+.btn4{
+    font-weight: bold;
+    font-size: 20px;
+    color: #005900;
+    background: #FFFCA8;
+    text-shadow: #FFFCA8 2px 2px 0px, #9C9C9C 4px 4px 0px;
+    color: #005900;
+    background: #FFFCA8;
+    text-decoration: none;
 }
