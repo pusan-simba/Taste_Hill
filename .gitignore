@@ -1,0 +1,4 @@
+.config_secret
+__pycache__
+myvenv/
+db.sqlite3

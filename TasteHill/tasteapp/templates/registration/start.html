@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>맛동산 start!</title>
+    <link rel="shortcut icon" href="static/image/logo.png"/>
+    <link rel="stylesheet" href= "{% static 'css/start.css' %}">
+</head>
+<body>
+    <div>
+        <img src="{% static 'image/logo.png' %}" width="140" height="140"><br/><br/>
+            <div class="a">
+                HELLO 맛동산!
+                <marquee style="text-align:center;" direction="up" scrollamount="5">맛동산 open 예정</marquee>
+
+            </div>
+            <br/><br/>
+        
+            <a class="btn1" href="{% url 'register' %}">회원가입</a>
+            <a class="btn2" href="{% url 'login' %}">로그인</a><br/><br/>
+           
+            <button class="btn3" type="button" onclick="alert('쥬저리쥬저리 안내창')">Click Here!</button>
+    </div>
+</body>
+</html>
