@@ -12,6 +12,13 @@
 <body>
     <h2>맛동산 탐험 시작!</h2>
     <img src="{% static 'image/logo.png' %}" width="100" height="100"><br/><br/>
+    
+    
+    {% if user.is_authenticated %}
+    <a href="/accounts/logout">로그아웃</a>
+    <br>
+    {{user.username}} 님이 로그인 중입니다
+    {% else %}
     <p class="text">sns 로그인</p>
  <!-- <button>구글/네이버/카카오</button> -->
     <input class="sns" type="image" src="{% static 'image/g_logo.jpg' %}"/>
@@ -20,9 +27,9 @@
     <br/><br/>
     ID ㅁㅁㅁㅁㅁㅁ<br/>
     PW ㅁㅁㅁㅁㅁㅁ<br/>
-    
     <p>돌아가기/ 로그인</p>
     <a href="{% url 'start' %}">돌아가기</a>
+    {% endif %}
     
    
     <!-- <form action="{% url 'mainhome'%}" method="POST">
