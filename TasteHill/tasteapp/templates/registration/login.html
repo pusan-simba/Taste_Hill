@@ -1,3 +1,4 @@
+{% load socialaccount %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,7 @@
  <!-- <button>구글/네이버/카카오</button> -->
     <input class="sns" type="image" src="{% static 'image/g_logo.jpg' %}"/>
     <input class="sns" type="image" src="{% static 'image/n_logo.png' %}"/>
-    <input class="sns" type="image" src="{% static 'image/kakao_logo.png' %}"/>
+    <a href="{% provider_login_url 'kakao' method='oauth2' %}"><input class="sns" type="image" src="{% static 'image/kakao_logo.png' %}"/></a>
     <br/><br/>
     ID ㅁㅁㅁㅁㅁㅁ<br/>
     PW ㅁㅁㅁㅁㅁㅁ<br/>
