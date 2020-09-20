@@ -29,12 +29,11 @@ INSTALLED_APPS = [
 ]
 INSTALLED_APPS += [
     'tasteapp',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.kakao'
+    'accounts'
+    
 ]
-SITE_ID = 2
+
+AUTH_USER_MODEL='accounts.MyUser'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -58,8 +57,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #'allauth' needs this from django
-                'django.template.context_processors.request'
             ],
         },
     },
@@ -78,10 +75,6 @@ DATABASES = {
     }
 }
 
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
