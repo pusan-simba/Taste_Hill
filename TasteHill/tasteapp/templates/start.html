@@ -11,18 +11,18 @@
 <body>
     <div>
         <img src="{% static 'image/logo.png' %}" width="140" height="140"><br/><br/>
-            <div class="a">
+            <div class="mar">
                 HELLO 맛동산!
                 <marquee style="text-align:center;" direction="up" scrollamount="5">맛동산 open 예정</marquee>
 
             </div>
             <br/><br/>
         
-            <a class="btn2" href="{% url 'login' %}">로그인</a><br/><br/>
-            <a href="{% url 'signup' %}">회원가입</a>
+            <a class="btn1" href="{% url 'login' %}">로그인</a>
+            <a class="btn2" href="{% url 'signup' %}">회원가입</a><br/><br/><br/>
            
             <!-- <button class="btn3" type="button" onclick="alert('쥬저리쥬저리 안내창')">Click Here!</button> -->
-            <a class="btn4" href="{% url 'developers' %}">DEVELOPERS</a>
+            <a class="btn4" href="{% url 'developers' %}">&nbsp;DEVELOPERS&nbsp; </a>
     </div>
 </body>
 </html>

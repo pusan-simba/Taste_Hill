@@ -1,3 +1,6 @@
+*{
+    text-decoration: none;
+}
 body{
     background-color: rgb(247, 231, 207);
     text-decoration: none;
@@ -10,4 +13,25 @@ body{
     top:50%;
     margin-left:-200px;
     margin-top:-200px;
+}
+
+.mar{
+    font-size:30pt;
+    color: #FFFFFF;
+    /* background: #333333; */
+    text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
+
+.btn{
+    font-weight: bold;
+    font-size: 20px;
+    color: #005900;
+    background: #FFFCA8;
+    text-shadow: #FFFCA8 2px 2px 0px, #9C9C9C 3px 4px 0px;
+    color: #005900;
+    background: #FFFCA8;
+}
+
+.btn:hover{
+
 }

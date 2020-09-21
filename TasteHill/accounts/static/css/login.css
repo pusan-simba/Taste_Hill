@@ -1,0 +1,36 @@
+*{
+    text-decoration: none;
+}
+body{
+    background-color: rgb(247, 231, 207);
+    text-decoration: none;
+    text-align:center;
+/* 아래는 정중앙 배치 속성값 */
+    width:400px;
+    height:300px;
+    position:absolute;
+    left:50%;
+    top:45%;
+    margin-left:-200px;
+    margin-top:-200px;
+}
+
+.btn1{
+    width:40%;
+    /* float: center; */
+    font-size:15pt;
+    color: rgba(117, 74, 10, 0.747);
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    /* border-radius: 20px; */
+    background-color: rgb(250, 236, 207);
+    /* width: 140px;
+    height: 45px; */
+    font-weight: bold;
+}
+
+/* 
+.text{
+    font-weight: bold;
+} */
