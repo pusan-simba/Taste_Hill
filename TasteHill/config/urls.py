@@ -25,9 +25,8 @@ urlpatterns = [
     path('',start, name="start"),
     path('tasteapp/developers/', developers, name="developers"),
     path('tasteapp/register/', register, name="register"),
-    path('tasteapp/login/', login, name="login"),
     path('tasteapp/mymenu/', mymenu, name="mymenu"),
     path('tasteapp/mainhome/', mainhome, name="mainhome"),
-    url('accounts/', include('allauth.urls')),
+    path('accounts/',include('accounts.urls')),
 
 ]
