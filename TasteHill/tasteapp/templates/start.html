@@ -6,23 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>맛동산 start!</title>
     <link rel="shortcut icon" href="static/image/logo.png"/>
-    <link rel="stylesheet" href= "{% static 'css/start.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/start222.css' %}">
 </head>
 <body>
-    <div>
+    <div class="form2">
+        <div class="logo_box">
         <img src="{% static 'image/logo.png' %}" width="140" height="140"><br/><br/>
             <div class="mar">
                 HELLO 맛동산!
                 <marquee style="text-align:center;" direction="up" scrollamount="5">맛동산 open 예정</marquee>
 
             </div>
+            <br/>
+            <div class="btn-position">
+                <a class="btn1" href="{% url 'signup' %}">회원가입</a>
+                <a class="btn2" href="{% url 'login' %}">로그인</a></a><br/><br/><br/>
+            </div>
             <br/><br/>
-        
-            <a class="btn1" href="{% url 'login' %}">로그인</a>
-            <a class="btn2" href="{% url 'signup' %}">회원가입</a><br/><br/><br/>
-           
             <!-- <button class="btn3" type="button" onclick="alert('쥬저리쥬저리 안내창')">Click Here!</button> -->
             <a class="btn4" href="{% url 'developers' %}">&nbsp;DEVELOPERS&nbsp; </a>
+        </div>
     </div>
 </body>
 </html>
