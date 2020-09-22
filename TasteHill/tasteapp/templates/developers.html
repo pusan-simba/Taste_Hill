@@ -9,11 +9,21 @@
     <link rel="shortcut icon" href="static/image/logo.png/"/>
 </head>
 <body>
+    <div class="mar">
+        HELLO 맛동산!
+    </div>
+    <br/>
+    <img src="{% static 'image/logo.png' %}" width="120" height="120"><br/><br/>
+    <marquee style="text-align:center;" direction="up" scrollamount="3">
     안녕하세요 멋쟁이 심바 입니덩.<br/>
-    화려한 스펙을 자랑하는 심바들의 맛동산!! 함께 탐험해보시져!<br/><br/>
+    화려한 스펙을 자랑하는 심바들의 맛동산!! <br/>함께 탐험해보시져!
+    </marquee>
+    <br/><br/>
     정진호
     차동엽
     서아림
     박해솔
+    <br/><br/><br/><br/>
+    <a class="btn" href="{% url 'start' %}">&nbsp;BACK&nbsp;</a>
 </body>
 </html>

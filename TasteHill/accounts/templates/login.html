@@ -1,15 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LOGIN</title>
+    <link rel="shortcut icon" href="static/image/logo.png"/>
+    <link rel="stylesheet" href= "{% static 'css/login.css' %}"/>
 </head>
 <body>
-    <form method="POST">
+    <h2>맛 동 산</h2>
+    <img src="{% static 'image/logo.png' %}" width="100" height="100"><br/><br/>
+
+    <form action="{% url 'mainhome'%}" method="POST">
         {% csrf_token %}
         {{form.as_p}}
-        <input type="submit" value="로그인">
+        <br/>
+        <input class=btn1 type="submit" value="LOGIN">
+        <!-- 돌아가기: 임시버튼 (나중에삭제) -->
+        <br/><br/><a href="{% url 'start' %}">돌아가기(나중에삭제)</a>
 
     </form>
 </body>
