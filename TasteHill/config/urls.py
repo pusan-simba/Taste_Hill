@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url
-from tasteapp.views import start, developers, login, mymenu, mainhome
+from tasteapp.views import start, developers, login, mymenu, mainhome,detail,post_like_toggle
 
 
 urlpatterns = [
@@ -27,5 +27,7 @@ urlpatterns = [
     path('tasteapp/mymenu/', mymenu, name="mymenu"),
     path('tasteapp/mainhome/', mainhome, name="mainhome"),
     path('accounts/',include('accounts.urls')),
+    path('tasteapp/detail/<int:post_id>',detail,name="detail"),
+    path('tasteapp/post_like_toggle/<int:post_id>',post_like_toggle, name="post_like_toggle"),
 
 ]

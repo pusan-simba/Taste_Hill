@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Home</title>
-    <link rel="shortcut icon" href="static/image/logo.png/"/>
+    <link rel="shortcut icon" href="static/image/logo.png/" />
 </head>
+
 <body>
     요기가 메인이니라
 
-    <br/><br/><a href="{% url 'start' %}">돌아가기(나중에삭제)</a>
+    <form method="POST">
+
+        {% csrf_token %}
+        {% for i in post_form %}
+        <a href="{% url 'detail' i.id %}">
+
+            {{i.title}}
+        </a>
+        {% endfor %}
+
+    </form>
+
+
+    <br /><br /><a href="{% url 'start' %}">돌아가기(나중에삭제)</a>
 </body>
+
 </html>
