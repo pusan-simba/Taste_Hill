@@ -40,6 +40,34 @@ class MyUser(AbstractBaseUser,PermissionsMixin):
     objects = UserManager()
 
 
+class Profile(models.Model):
+    user = models.OneToOneField(MyUser,on_delete=models.CASCADE)
+    
+    like_post = models.ManyToManyField('Post', blank=True, related_name='like_users')
+    
+    def __str__(self):
+
+        return str(self.user)
+
+class Post(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)  
+    title = models.CharField(max_length=150)
+    like_count = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+
+        return self.title
+
+class Comment(models.Model):
+    user = models.ForeignKey(MyUser,on_delete=models.CASCADE)
+    post = models.ForeignKey(Post,on_delete=models.CASCADE)
+    body = models.CharField('댓글',max_length=150)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+
+
+
 
 
 
