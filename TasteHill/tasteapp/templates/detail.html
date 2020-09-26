@@ -1,33 +1,46 @@
 {{my_post.title}}
 
+<p>좋아요 수 : {{my_post.like_count}}</>
 
-<p>좋아요 수 : {{my_post.like_count}}</p>
+    <a href="{% url 'post_like_toggle' my_post.id %}">
 
-<a href="{% url 'post_like_toggle' my_post.id %}">
+        {% if my_post in user.profile.like_post.all %}
+        <!--이것저것 찍어본 결과..엄청나 post 가 모델이 아니라 내가 디테일에서 만들어서 변수로 들고온 my_post 였다-->
+        취소
+        {% else %}
+        <!--좋아요 해준 포스트가 있으면 취소 아니면 좋아요누르는거 생김-->
+        좋아요
+        {% endif %}
+    </a>
 
-    {% if my_post in user.profile.like_post.all %}
-    <!--이것저것 찍어본 결과..엄청나 post 가 모델이 아니라 내가 디테일에서 만들어서 변수로 들고온 my_post 였다-->
-    취소
-    {% else %}
-    <!--좋아요 해준 포스트가 있으면 취소 아니면 좋아요누르는거 생김-->
-    좋아요
-    {% endif %}
-</a>
+    <form method="POST" action="{%url 'create_review' my_post.id %}">
+        {% csrf_token %}
+        {{comment_form}}
+        <input type="submit" value="리뷰 작성">
 
-<form method="POST">
-    {% csrf_token %}
-    {{comment_form}}
-    <input type="submit" value="리뷰 작성">
+        {% for comment in my_post.comment_set.all %}
 
-    {% for comment in post.comment_set.all %}
-    <p> 이름: {{comment.user}}</p>
-    <p> 리뷰: {{comment}}</p>
+        <p> 리뷰: {{comment.body}}</p>
+        <p> {{comment.updated_at}}
+            <a href="{% url 'update_review' my_post.id comment.id %}">수정</a>
+            <a href="{% url 'delete_review' my_post.id comment.id %}">삭제</a>
+        </p>
+    </form>
+
+    <form method="post" action="{% url 'create_recomment' my_post.id %}">
+        {%csrf_token%}
+        {%for recom in recom_form %}
+        {%if recom.label != 'Comment' %}
+        {{recom.label}} : {{recom}}
+        {%endif%}
+        {%endfor%}
+        <input type="hidden" name="comment" value={{comment.id}}>
+        <input type="submit" value="답글">
+    </form>
+
+    {%for recom in comment.recomment_set.all%}
+    ↪{{recom}}<br>
+    {%endfor%}
 
     <hr>
-
     {% endfor %}
-
-
-
-
-</form>
