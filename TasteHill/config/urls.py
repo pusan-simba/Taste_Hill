@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url
-from tasteapp.views import start, developers, login, mymenu, mainhome,detail,post_like_toggle
+from tasteapp.views import start, developers, login, mymenu, mainhome,detail,post_like_toggle,create_review,delete_review,update_review,create_recomment
 
 
 urlpatterns = [
@@ -29,5 +29,9 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('tasteapp/detail/<int:post_id>',detail,name="detail"),
     path('tasteapp/post_like_toggle/<int:post_id>',post_like_toggle, name="post_like_toggle"),
+    path('tasteapp/create_review/<int:post_id>',create_review,name="create_review"), 
+    path('tasteapp/delete_review/<int:post_id>/<int:com_id>',delete_review , name="delete_review"),
+    path('tasteapp/update_review/<int:post_id>/<int:com_id>',update_review , name="update_review"),
+    path('tasteapp/create_recomment/<int:post_id>',create_recomment , name="create_recomment"),
 
 ]
