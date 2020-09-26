@@ -3,7 +3,6 @@
 }
 body{
     background-color: rgb(247, 231, 207);
-    text-decoration: none;
     text-align:center;
 /* 아래는 정중앙 배치 속성값 */
     width:400px;
@@ -14,9 +13,12 @@ body{
     margin-left:-200px;
     margin-top:-200px;
 }
+.log{
+    padding-bottom: 10px;
+}
 
 .btn1{
-    width:40%;
+    width:164px;
     /* float: center; */
     font-size:15pt;
     color: rgba(117, 74, 10, 0.747);
@@ -24,11 +26,26 @@ body{
     /* justify-content: center;
     align-items: center; */
     /* border-radius: 20px; */
-    background-color: rgb(250, 236, 207);
+    background-color: rgb(253, 236, 206);
     /* width: 140px;
     height: 45px; */
     font-weight: bold;
 }
+
+.btn2{
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size:15pt;
+    color: rgba(117, 74, 10, 0.747);
+    background-color: rgb(253, 236, 206);
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    
+    font-weight: bold;
+}
+
+
 
 /* 
 .text{

@@ -16,10 +16,13 @@
         {% csrf_token %}
         {{form.as_p}}
         <br/>
-        <input class=btn1 type="submit" value="LOGIN">
-        <!-- 돌아가기: 임시버튼 (나중에삭제) -->
-        <br/><br/><a href="{% url 'start' %}">돌아가기(나중에삭제)</a>
-
+        <div class="log">
+        <input class=btn1 type="submit" value="LOGIN"><br/>
+        </div>
+        <a class="btn2" href="{% url 'signup' %}">회원가입</a>
+    
+          <!-- 돌아가기: 임시버튼 (나중에삭제) -->
+          <br/><br/><br/><br/><a href="{% url 'start' %}">돌아가기(나중에삭제)</a>
     </form>
 </body>
 </html>
