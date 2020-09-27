@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager,PermissionsMixin
-
+from django.db.models.signals import post_save  
+from django.dispatch import receiver
 # Create your models here.
 
 class UserManager(BaseUserManager):
@@ -46,8 +47,14 @@ class Profile(models.Model):
     like_post = models.ManyToManyField('Post', blank=True, related_name='like_users')
     
     def __str__(self):
-
+        
         return str(self.user)
+
+@receiver(post_save, sender=MyUser)
+def create_user_profile(sender, instance, created, **kwargs):  
+    
+    if created:
+        Profile.objects.create(user=instance)
 
 class Post(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)  
@@ -63,7 +70,8 @@ class Comment(models.Model):
     post = models.ForeignKey(Post,on_delete=models.CASCADE)
     body = models.CharField('댓글',max_length=150)
     updated_at = models.DateTimeField(auto_now=True)
-
+    score = models.CharField(max_length=100,default="0")
+    
 class ReComment(models.Model):
     comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
     body = models.CharField('대댓글',max_length=150)
