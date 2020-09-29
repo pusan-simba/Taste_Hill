@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url
-from tasteapp.views import start, developers, login, mymenu, mainhome,detail,post_like_toggle,create_review,delete_review,update_review,create_recomment
+from tasteapp.views import start, developers, mymenu, mainhome,detail,post_like_toggle,create_review,delete_review,update_review,create_recomment
 
 
 urlpatterns = [
