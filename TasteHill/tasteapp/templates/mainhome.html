@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Home</title>
     <link rel="shortcut icon" href="static/image/logo.png/" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mainhome.css' %}">
 </head>
 
 <body>
+    <div class="form2">
     요기가 메인이니라
 
     <form method="POST">
@@ -22,9 +25,8 @@
         {% endfor %}
 
     </form>
-
-
     <br /><br /><a href="{% url 'start' %}">돌아가기(나중에삭제)</a>
+    </div>
 </body>
 
 </html>

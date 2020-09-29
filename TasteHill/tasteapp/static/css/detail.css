@@ -2,7 +2,6 @@
     text-decoration: none;
 }
 
-
 body{
     height: 100vh;
     font-family: sans-serif;
@@ -37,19 +36,3 @@ body{
     display: block;
     margin: 0 auto;
 }
-
-.btn1{
-    width:40%;
-    /* float: center; */
-    font-size:15pt;
-    color: rgba(117, 74, 10, 0.747);
-    /* display: flex; */
-    /* justify-content: center;
-    align-items: center; */
-    /* border-radius: 20px; */
-    background-color: rgb(250, 236, 207);
-    /* width: 140px;
-    height: 45px; */
-    font-weight: bold;
-}
-

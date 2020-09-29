@@ -9,21 +9,42 @@
     <link rel="shortcut icon" href="static/image/logo.png/"/>
 </head>
 <body>
-    <div class="mar">
-        HELLO 맛동산!
+    <div class="form2">
+        <div class="logo_box">
+            <div class="mar">
+                HELLO 맛동산!
+            </div>
+            <br/>
+            <img src="{% static 'image/logo.png' %}" width="120" height="120"><br/><br/>
+
+            <strong>
+                <div class=center>
+                    <div class=j>정진호 </div>
+                    <div class=s>서아림 </div>
+                </div>
+                <div class=center>
+                    <div class=c>차동엽 </div>
+                    <div class=p>박해솔 </div>
+                </div>
+                </strong>
+                <br/><br/>
+                <!-- <marquee style="text-align:center;" direction="up" scrollamount="3">
+                    안녕하세요 멋쟁이 심바 입니덩.<br/>
+                    화려한 스펙을 자랑하는 심바들의 맛동산!!
+                    <br/>함께 탐험해보시져!
+                </marquee> -->
+                <marquee style="text-align:center;" direction="up" scrollamount="2" scrolldelay="80" behavior= slide loop="1">
+                    안녕하세요 <b>멋쟁이 심바</b> 입니덩.<br/></marquee>
+                <marquee style="text-align:center;" direction="up" scrollamount="3" scrolldelay="350" behavior= slide loop="1">
+                    화려한 스펙을 자랑하는 심바들의 맛동산!!<br/></marquee>
+                <marquee style="text-align:center;" direction="up" scrollamount="3" scrolldelay="600" behavior= slide loop="1">
+                    함께 탐험해보시져!</marquee>
+                </marquee>
+                
+
+                <br/><br/><br/><br/>
+                <a class="btn" href="{% url 'start' %}">&nbsp;BACK&nbsp;</a>
+        </div>
     </div>
-    <br/>
-    <img src="{% static 'image/logo.png' %}" width="120" height="120"><br/><br/>
-    <marquee style="text-align:center;" direction="up" scrollamount="3">
-    안녕하세요 멋쟁이 심바 입니덩.<br/>
-    화려한 스펙을 자랑하는 심바들의 맛동산!! <br/>함께 탐험해보시져!
-    </marquee>
-    <br/><br/>
-    정진호
-    차동엽
-    서아림
-    박해솔
-    <br/><br/><br/><br/>
-    <a class="btn" href="{% url 'start' %}">&nbsp;BACK&nbsp;</a>
 </body>
 </html>

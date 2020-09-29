@@ -8,7 +8,7 @@ class SignupForm(forms.ModelForm):
     label="Password")
     password2 = forms.CharField(widget= forms.PasswordInput(
         attrs= {'class':'form-control','type':'password', 'name':'password2'}),
-    label="Password2")
+    label="Password 확인")
     
     class Meta:
         model = MyUser

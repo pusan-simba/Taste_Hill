@@ -5,11 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>디테일페이지</title>
+    <title>리뷰/맛집 세부정보</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/star.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
 </head>
 
 <body>
+    <div class="form2">
     {{my_post.title}}
 
     <p>좋아요 수 : {{my_post.like_count}}</p>
@@ -71,6 +73,8 @@
     <hr>
     {% endfor %}
     <script type="text/javascript" src="{% static 'js/star.js' %}"></script>
+
+    </div>
 </body>
 
 </html>

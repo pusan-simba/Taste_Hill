@@ -9,17 +9,22 @@
     <link rel="stylesheet" href="{% static 'css/signup.css' %}"/>
 </head>
 <body>
-    <h2>맛동산 탐험 시작!</h2>
-    <img src="{% static 'image/logo.png' %}" width="100" height="100"><br/><br/>
+    <div class="form2">
+        <h2>맛동산 탐험 시작!</h2>
+        <div class="logo_box">
+            <img src="{% static 'image/logo.png' %}" width="100" height="100"><br/><br/>
 
-    <form action="{% url 'mainhome'%}" method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <br/>
-        <input class="btn1" type="submit" value="SIGN UP">
+            <form action="{% url 'mainhome'%}" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <br/>
+                <input class="btn1" type="submit" value="SIGN UP">
 
-    </form>
+            </form>
 
-    <br/><br/><a href="{% url 'start' %}">돌아가기(나중에삭제)</a>
+            <br/><br/>
+            <a href="{% url 'start' %}">돌아가기(나중에삭제)</a>
+        </div>
+    </div>
 </body>
 </html>

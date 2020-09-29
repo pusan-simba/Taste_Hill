@@ -12,9 +12,6 @@ def start(request):
 def developers(request):
     return render(request, 'developers.html')
 
-def login(request):
-    return render(request, 'registration/login.html')
-
 def mymenu(request):
     return render(request, 'mymenu.html')
 

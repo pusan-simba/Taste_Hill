@@ -1,43 +1,18 @@
 *{
     text-decoration: none;
 }
-
 body{
-    height: 100vh;
-    font-family: sans-serif;
-    /* background-color:rgb(247, 231, 207); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* form2: 모바일 모양 틀 */
-.form2{
-    width: 400px;
-    height: 600px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 15px;
-    border-style: solid;
-    border-width:3px;
-    padding: 0 15px 0 15px;
     background-color: rgb(247, 231, 207);
-    box-shadow: 0px 25px 36px 12px rgba(145, 141, 141, 0.712);
+    text-align:center;
+/* 아래는 정중앙 배치 속성값 */
+    width:400px;
+    height:300px;
+    position:absolute;
+    left:50%;
+    top:45%;
+    margin-left:-200px;
+    margin-top:-200px;
 }
-
-/* 내용이 들어갈 내부 틀???? 뭔가 없어도 될거같은데 */
-.logo_box{
-    background-color:  rgb(247, 231, 207);
-    width: 100%;
-    height: 400px;
-    display: block;
-    margin: 0 auto;
-}
-
-
 .log{
     padding-bottom: 10px;
 }

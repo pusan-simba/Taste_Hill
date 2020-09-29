@@ -9,20 +9,26 @@
     <link rel="stylesheet" href= "{% static 'css/login.css' %}"/>
 </head>
 <body>
-    <h2>맛 동 산</h2>
-    <img src="{% static 'image/logo.png' %}" width="100" height="100"><br/><br/>
+   <div class="form2">
+    <h2>★맛 동 산★</h2>
+    <div class="logo_box">
+        
+        <img src="{% static 'image/logo.png' %}" width="100" height="100"><br/><br/>
 
-    <form action="{% url 'mainhome'%}" method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <br/>
-        <div class="log">
-        <input class=btn1 type="submit" value="LOGIN"><br/>
-        </div>
-        <a class="btn2" href="{% url 'signup' %}">회원가입</a>
-    
-          <!-- 돌아가기: 임시버튼 (나중에삭제) -->
-          <br/><br/><br/><br/><a href="{% url 'start' %}">돌아가기(나중에삭제)</a>
-    </form>
+        <form action="{% url 'mainhome'%}" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <br/>
+            <div class="log">
+                <input class="btn1" type="submit" value="로 그 인"><br/>
+            </div>
+            <a class="btn2" href="{% url 'signup' %}">회원가입</a>
+
+            <!-- 돌아가기: 임시버튼 (나중에삭제) -->
+            <br/><br/><br/><br/>
+            <a href="{% url 'start' %}">돌아가기(나중에삭제)</a>
+        </form>
+    </div>
+</div>
 </body>
 </html>
