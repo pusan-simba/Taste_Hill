@@ -1,6 +1,18 @@
-{{my_post.title}}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-<p>좋아요 수 : {{my_post.like_count}}</>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디테일페이지</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/star.css' %}">
+</head>
+
+<body>
+    {{my_post.title}}
+
+    <p>좋아요 수 : {{my_post.like_count}}</p>
 
     <a href="{% url 'post_like_toggle' my_post.id %}">
 
@@ -15,11 +27,25 @@
 
     <form method="POST" action="{%url 'create_review' my_post.id %}">
         {% csrf_token %}
-        {{comment_form}}
+        <div class="star-box">
+            <img id="star1" class="empty-star" src="{% static 'image/empty.png' %}" alt="empty_star" />
+            <img id="star2" class="empty-star" src="{% static 'image/empty.png' %}" alt="empty_star" />
+            <img id="star3" class="empty-star" src="{% static 'image/empty.png' %}" alt="empty_star" />
+            <img id="star4" class="empty-star" src="{% static 'image/empty.png' %}" alt="empty_star" />
+            <img id="star5" class="empty-star" src="{% static 'image/empty.png' %}" alt="empty_star" />
+        </div>
+        <input type="hidden" name="score" id="star-score" value="0" />
+        {%for com in comment_form%}
+        {%if com.label != 'Score' %}
+        {{com.label}} : {{com}}
+        {%endif%}
+        {%endfor%}
+
         <input type="submit" value="리뷰 작성">
 
         {% for comment in my_post.comment_set.all %}
 
+        <p>{{comment.score}}점</p>
         <p> 리뷰: {{comment.body}}</p>
         <p> {{comment.updated_at}}
             <a href="{% url 'update_review' my_post.id comment.id %}">수정</a>
@@ -44,3 +70,7 @@
 
     <hr>
     {% endfor %}
+    <script type="text/javascript" src="{% static 'js/star.js' %}"></script>
+</body>
+
+</html>

@@ -68,8 +68,8 @@ def create_review(request,post_id):
 
 
 @login_required
-def update_review(request,com_id,post_id):
-    my_com = Comment.objects.get(id=com_id)
+def update_review(request,com_id,post_id): # 게시글의 id와 댓글의 id 두개가 필요함.
+    my_com = Comment.objects.get(id=com_id)  # 게시글의 id와 댓글의 id 두개가 필요함.
     com_form = CommentForm(instance=my_com)
     if request.method == "POST":
         update_form =  CommentForm(request.POST, instance = my_com)
